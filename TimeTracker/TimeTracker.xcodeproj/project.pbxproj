@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1967F9FE2104C1DF005FF1CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967F9FD2104C1DF005FF1CB /* AppDelegate.swift */; };
-		1967FA002104C1DF005FF1CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967F9FF2104C1DF005FF1CB /* ViewController.swift */; };
 		1967FA032104C1DF005FF1CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1967FA012104C1DF005FF1CB /* Main.storyboard */; };
 		1967FA052104C1DF005FF1CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1967FA042104C1DF005FF1CB /* Assets.xcassets */; };
 		1967FA082104C1DF005FF1CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1967FA062104C1DF005FF1CB /* LaunchScreen.storyboard */; };
@@ -17,6 +16,8 @@
 		1967FA2F2104C415005FF1CB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967FA2E2104C415005FF1CB /* CustomViewController.swift */; };
 		1967FA312104C423005FF1CB /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967FA302104C423005FF1CB /* CustomTableViewController.swift */; };
 		1967FA332104C42E005FF1CB /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967FA322104C42E005FF1CB /* CustomCollectionViewController.swift */; };
+		1967FA372104C520005FF1CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967FA352104C520005FF1CB /* MainViewController.swift */; };
+		1967FA382104C520005FF1CB /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1967FA362104C520005FF1CB /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 /* Begin PBXFileReference section */
 		1967F9FA2104C1DF005FF1CB /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1967F9FD2104C1DF005FF1CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1967F9FF2104C1DF005FF1CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1967FA022104C1DF005FF1CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1967FA042104C1DF005FF1CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1967FA072104C1DF005FF1CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		1967FA2E2104C415005FF1CB /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		1967FA302104C423005FF1CB /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		1967FA322104C42E005FF1CB /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
+		1967FA352104C520005FF1CB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1967FA362104C520005FF1CB /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				1967F9FD2104C1DF005FF1CB /* AppDelegate.swift */,
-				1967F9FF2104C1DF005FF1CB /* ViewController.swift */,
+				1967FA342104C4CD005FF1CB /* ProjectsMainView */,
 				1967FA2C2104C3A3005FF1CB /* Utils */,
 				1967FA2B2104C38B005FF1CB /* SupportFiles */,
 			);
@@ -156,6 +158,23 @@
 				1967FA322104C42E005FF1CB /* CustomCollectionViewController.swift */,
 			);
 			path = CustomControllers;
+			sourceTree = "<group>";
+		};
+		1967FA342104C4CD005FF1CB /* ProjectsMainView */ = {
+			isa = PBXGroup;
+			children = (
+				1967FA392104C522005FF1CB /* Controller */,
+			);
+			path = ProjectsMainView;
+			sourceTree = "<group>";
+		};
+		1967FA392104C522005FF1CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1967FA352104C520005FF1CB /* MainViewController.swift */,
+				1967FA362104C520005FF1CB /* MainViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +287,7 @@
 				1967FA082104C1DF005FF1CB /* LaunchScreen.storyboard in Resources */,
 				1967FA052104C1DF005FF1CB /* Assets.xcassets in Resources */,
 				1967FA032104C1DF005FF1CB /* Main.storyboard in Resources */,
+				1967FA382104C520005FF1CB /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,8 +315,8 @@
 				1967FA312104C423005FF1CB /* CustomTableViewController.swift in Sources */,
 				1967FA2F2104C415005FF1CB /* CustomViewController.swift in Sources */,
 				1967FA332104C42E005FF1CB /* CustomCollectionViewController.swift in Sources */,
-				1967FA002104C1DF005FF1CB /* ViewController.swift in Sources */,
 				1967F9FE2104C1DF005FF1CB /* AppDelegate.swift in Sources */,
+				1967FA372104C520005FF1CB /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
