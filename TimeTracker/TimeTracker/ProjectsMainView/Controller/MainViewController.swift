@@ -11,7 +11,10 @@ import UIKit
 class MainViewController: UIViewController {
 
     //Mark: - Properties
-    @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lastProjectView: UIView!
+    @IBOutlet weak var currentProjectsContainer: UIView!
+    @IBOutlet weak var finishedProjectsContainer: UIView!
+    @IBOutlet weak var createButton: UIButton!
     
     //Mark: - Life Cycle
     init () {
@@ -24,12 +27,37 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupNavBar()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        stackViewTopConstraint.constant =         navigationController?.navigationBar.frame.height ?? 0
+        setupLastProjectView()
+        setupCreateButton()
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func createProject(_ sender: UIButton) {
     }
 
+}
+
+//Mark: - Views setup
+private extension MainViewController {
+    
+    func setupCreateButton() {
+        createButton.layer.cornerRadius = createButton.frame.height/2
+        createButton.clipsToBounds = true
+    }
+    
+    func setupLastProjectView () {
+        lastProjectView.layer.cornerRadius = 8
+        lastProjectView.clipsToBounds = true
+    }
+    
+    func setupNavBar () {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.backgroundColor = .white
+    }
 }
