@@ -31,6 +31,7 @@ class ProjectsCollectionViewController: CustomCollectionViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
         registerCells ()
+        collectionView?.showsHorizontalScrollIndicator = false
     }
     
 }
@@ -65,8 +66,12 @@ extension ProjectsCollectionViewController {
 extension ProjectsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height
-        let width = height + height*0.1
+        let width = height + height*0.3
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
 
