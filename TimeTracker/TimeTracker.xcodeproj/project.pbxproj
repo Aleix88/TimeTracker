@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19185B3721076ACD008D1074 /* ProjectsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19185B3621076ACD008D1074 /* ProjectsCollectionViewController.swift */; };
 		1967F9FE2104C1DF005FF1CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967F9FD2104C1DF005FF1CB /* AppDelegate.swift */; };
 		1967FA032104C1DF005FF1CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1967FA012104C1DF005FF1CB /* Main.storyboard */; };
 		1967FA052104C1DF005FF1CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1967FA042104C1DF005FF1CB /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19185B3621076ACD008D1074 /* ProjectsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewController.swift; sourceTree = "<group>"; };
 		1967F9FA2104C1DF005FF1CB /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1967F9FD2104C1DF005FF1CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1967FA022104C1DF005FF1CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				1967FA352104C520005FF1CB /* MainViewController.swift */,
 				1967FA362104C520005FF1CB /* MainViewController.xib */,
+				19185B3621076ACD008D1074 /* ProjectsCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			files = (
 				1967FA312104C423005FF1CB /* CustomTableViewController.swift in Sources */,
 				1967FA2F2104C415005FF1CB /* CustomViewController.swift in Sources */,
+				19185B3721076ACD008D1074 /* ProjectsCollectionViewController.swift in Sources */,
 				1967FA332104C42E005FF1CB /* CustomCollectionViewController.swift in Sources */,
 				1967F9FE2104C1DF005FF1CB /* AppDelegate.swift in Sources */,
 				1967FA372104C520005FF1CB /* MainViewController.swift in Sources */,

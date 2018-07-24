@@ -15,6 +15,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var currentProjectsContainer: UIView!
     @IBOutlet weak var finishedProjectsContainer: UIView!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var lastProjectName: UILabel!
+    @IBOutlet weak var lastProjectCounterLabel: UILabel!
+    
+    let currentProjectsViewController = ProjectsCollectionViewController()
+    let finishedProjectsViewController = ProjectsCollectionViewController()
     
     //Mark: - Life Cycle
     init () {
@@ -22,7 +27,7 @@ class MainViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(nibName: "MainViewController", bundle: nil)
     }
     
     override func viewDidLoad() {
@@ -34,6 +39,7 @@ class MainViewController: UIViewController {
         super.viewDidLayoutSubviews()
         setupLastProjectView()
         setupCreateButton()
+        setupContainersControllers()
     }
     
     //MARK: - Actions
@@ -59,5 +65,15 @@ private extension MainViewController {
     func setupNavBar () {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.backgroundColor = .white
+    }
+    
+    func setupContainersControllers () {
+        addChildViewController(currentProjectsViewController)
+        currentProjectsContainer.addSubview(currentProjectsViewController.view)
+        currentProjectsViewController.didMove(toParentViewController: self)
+        
+        addChildViewController(finishedProjectsViewController)
+        finishedProjectsContainer.addSubview(finishedProjectsViewController.view)
+        finishedProjectsViewController.didMove(toParentViewController: self)
     }
 }

@@ -9,12 +9,19 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialHB.ttc">
+            <string>ArialHebrew-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="TimeTracker" customModuleProvider="target">
             <connections>
                 <outlet property="createButton" destination="Fhj-gQ-N2P" id="myt-iu-qvo"/>
                 <outlet property="currentProjectsContainer" destination="hy2-GA-90v" id="J9t-T5-gHq"/>
                 <outlet property="finishedProjectsContainer" destination="yLz-NQ-gW0" id="2Lo-b1-PeW"/>
+                <outlet property="lastProjectCounterLabel" destination="QA6-og-k90" id="i0b-y7-RQK"/>
+                <outlet property="lastProjectName" destination="NTn-Ws-2VE" id="hLr-cl-OHq"/>
                 <outlet property="lastProjectView" destination="Pk1-kC-gD1" id="7lg-lD-lYI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,7 +38,9 @@
                         <constraint firstAttribute="height" constant="44" id="Lxa-UU-KKM"/>
                         <constraint firstAttribute="width" constant="145" id="UPe-3u-DhH"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="12"/>
                     <state key="normal" title="CREATE PROJECT">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="0.0" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -44,27 +53,59 @@
                         <view contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A8P-fa-ncB" userLabel="TopContainer">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FZ-xC-Npq">
-                                    <rect key="frame" x="8" y="22" width="359" height="30"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pk1-kC-gD1" userLabel="LastProjectView">
+                                    <rect key="frame" x="10" y="57" width="355" height="143.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP SECRET PROJECT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTn-Ws-2VE">
+                                            <rect key="frame" x="8" y="15" width="339" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="18"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA6-og-k90">
+                                            <rect key="frame" x="8" y="34.5" width="339" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="p7B-Qo-JwS"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="8 tasks">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="16" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.65490196078431373" green="0.67843137254901964" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="NTn-Ws-2VE" firstAttribute="top" secondItem="Pk1-kC-gD1" secondAttribute="top" constant="15" id="9Xr-8a-wGy"/>
+                                        <constraint firstAttribute="trailing" secondItem="QA6-og-k90" secondAttribute="trailing" constant="8" id="cMj-u6-JvZ"/>
+                                        <constraint firstItem="QA6-og-k90" firstAttribute="leading" secondItem="Pk1-kC-gD1" secondAttribute="leading" constant="8" id="gkP-IA-aGk"/>
+                                        <constraint firstAttribute="trailing" secondItem="NTn-Ws-2VE" secondAttribute="trailing" constant="8" id="gqD-H3-tNe"/>
+                                        <constraint firstItem="QA6-og-k90" firstAttribute="top" secondItem="NTn-Ws-2VE" secondAttribute="bottom" id="uh0-XN-AVE"/>
+                                        <constraint firstItem="NTn-Ws-2VE" firstAttribute="leading" secondItem="Pk1-kC-gD1" secondAttribute="leading" constant="8" id="xbf-do-LEe"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST PROJECT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FZ-xC-Npq">
+                                    <rect key="frame" x="13" y="28" width="357" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="b1C-b2-hYd"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68000000000000005" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pk1-kC-gD1" userLabel="LastProjectView">
-                                    <rect key="frame" x="10" y="57" width="355" height="143.5"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </view>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.2496073" blue="0.36193603000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="0.2496073" blue="0.36193603000000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="6FZ-xC-Npq" firstAttribute="leading" secondItem="A8P-fa-ncB" secondAttribute="leading" constant="8" id="0jM-dw-LRp"/>
+                                <constraint firstItem="6FZ-xC-Npq" firstAttribute="leading" secondItem="A8P-fa-ncB" secondAttribute="leading" constant="13" id="0jM-dw-LRp"/>
                                 <constraint firstAttribute="trailing" secondItem="Pk1-kC-gD1" secondAttribute="trailing" constant="10" id="JUi-Lj-Mn6"/>
-                                <constraint firstItem="6FZ-xC-Npq" firstAttribute="top" secondItem="A8P-fa-ncB" secondAttribute="top" constant="22" id="LHK-4R-gA8"/>
-                                <constraint firstAttribute="trailing" secondItem="6FZ-xC-Npq" secondAttribute="trailing" constant="8" id="VLP-kP-nvb"/>
-                                <constraint firstItem="Pk1-kC-gD1" firstAttribute="top" secondItem="6FZ-xC-Npq" secondAttribute="bottom" constant="5" id="WQa-Mh-l3R"/>
+                                <constraint firstItem="6FZ-xC-Npq" firstAttribute="top" secondItem="A8P-fa-ncB" secondAttribute="top" constant="28" id="LHK-4R-gA8"/>
+                                <constraint firstAttribute="trailing" secondItem="6FZ-xC-Npq" secondAttribute="trailing" constant="5" id="VLP-kP-nvb"/>
+                                <constraint firstItem="Pk1-kC-gD1" firstAttribute="top" secondItem="6FZ-xC-Npq" secondAttribute="bottom" constant="-1" id="WQa-Mh-l3R"/>
                                 <constraint firstAttribute="bottom" secondItem="Pk1-kC-gD1" secondAttribute="bottom" id="YMC-lp-hcd"/>
                                 <constraint firstItem="Pk1-kC-gD1" firstAttribute="leading" secondItem="A8P-fa-ncB" secondAttribute="leading" constant="10" id="joq-t2-bth"/>
                             </constraints>
@@ -72,13 +113,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zy2-vb-Tzi" userLabel="MidContainer">
                             <rect key="frame" x="0.0" y="200" width="375" height="200"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEO-0Y-ZTc">
-                                    <rect key="frame" x="8" y="8" width="359" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT PROJECTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEO-0Y-ZTc">
+                                    <rect key="frame" x="13" y="12" width="358" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="I4m-9p-8oP"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68000000000000005" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hy2-GA-90v" userLabel="CurrentProjectsContainer">
@@ -86,13 +127,13 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="hy2-GA-90v" firstAttribute="leading" secondItem="Zy2-vb-Tzi" secondAttribute="leading" id="2bM-4n-hy5"/>
-                                <constraint firstAttribute="trailing" secondItem="HEO-0Y-ZTc" secondAttribute="trailing" constant="8" id="G9v-Em-TEn"/>
-                                <constraint firstItem="HEO-0Y-ZTc" firstAttribute="leading" secondItem="Zy2-vb-Tzi" secondAttribute="leading" constant="8" id="Gr9-md-EPa"/>
-                                <constraint firstItem="HEO-0Y-ZTc" firstAttribute="top" secondItem="Zy2-vb-Tzi" secondAttribute="top" constant="8" id="TXN-sG-dCI"/>
-                                <constraint firstItem="hy2-GA-90v" firstAttribute="top" secondItem="HEO-0Y-ZTc" secondAttribute="bottom" constant="5" id="Yv6-re-H2p"/>
+                                <constraint firstAttribute="trailing" secondItem="HEO-0Y-ZTc" secondAttribute="trailing" constant="4" id="G9v-Em-TEn"/>
+                                <constraint firstItem="HEO-0Y-ZTc" firstAttribute="leading" secondItem="Zy2-vb-Tzi" secondAttribute="leading" constant="13" id="Gr9-md-EPa"/>
+                                <constraint firstItem="HEO-0Y-ZTc" firstAttribute="top" secondItem="Zy2-vb-Tzi" secondAttribute="top" constant="12" id="TXN-sG-dCI"/>
+                                <constraint firstItem="hy2-GA-90v" firstAttribute="top" secondItem="HEO-0Y-ZTc" secondAttribute="bottom" constant="1" id="Yv6-re-H2p"/>
                                 <constraint firstAttribute="bottom" secondItem="hy2-GA-90v" secondAttribute="bottom" id="wvu-Oi-9MJ"/>
                                 <constraint firstAttribute="trailing" secondItem="hy2-GA-90v" secondAttribute="trailing" id="z5v-aJ-nGq"/>
                             </constraints>
@@ -100,13 +141,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gag-8p-I9q" userLabel="BotContainer">
                             <rect key="frame" x="0.0" y="400" width="375" height="200"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-z5-9jA">
-                                    <rect key="frame" x="10" y="5" width="355" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FINISH PROJECTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-z5-9jA">
+                                    <rect key="frame" x="13" y="10" width="355" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="X50-IS-y27"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68000000000000005" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLz-NQ-gW0" userLabel="FinishedProjectsContainer">
@@ -114,15 +155,15 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="0.0" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="CaG-z5-9jA" firstAttribute="leading" secondItem="Gag-8p-I9q" secondAttribute="leading" constant="10" id="2Bi-qE-6Ue"/>
+                                <constraint firstItem="CaG-z5-9jA" firstAttribute="leading" secondItem="Gag-8p-I9q" secondAttribute="leading" constant="13" id="2Bi-qE-6Ue"/>
                                 <constraint firstAttribute="bottom" secondItem="yLz-NQ-gW0" secondAttribute="bottom" id="9gm-9u-zFo"/>
-                                <constraint firstItem="CaG-z5-9jA" firstAttribute="top" secondItem="Gag-8p-I9q" secondAttribute="top" constant="5" id="JON-NV-gRL"/>
+                                <constraint firstItem="CaG-z5-9jA" firstAttribute="top" secondItem="Gag-8p-I9q" secondAttribute="top" constant="10" id="JON-NV-gRL"/>
                                 <constraint firstItem="yLz-NQ-gW0" firstAttribute="leading" secondItem="Gag-8p-I9q" secondAttribute="leading" id="WqY-AL-2af"/>
-                                <constraint firstAttribute="trailing" secondItem="CaG-z5-9jA" secondAttribute="trailing" constant="10" id="ZBM-Np-csW"/>
+                                <constraint firstAttribute="trailing" secondItem="CaG-z5-9jA" secondAttribute="trailing" constant="7" id="ZBM-Np-csW"/>
                                 <constraint firstAttribute="trailing" secondItem="yLz-NQ-gW0" secondAttribute="trailing" id="f1M-nW-eaJ"/>
-                                <constraint firstItem="yLz-NQ-gW0" firstAttribute="top" secondItem="CaG-z5-9jA" secondAttribute="bottom" constant="5" id="o1C-yG-AN2"/>
+                                <constraint firstItem="yLz-NQ-gW0" firstAttribute="top" secondItem="CaG-z5-9jA" secondAttribute="bottom" id="o1C-yG-AN2"/>
                             </constraints>
                         </view>
                     </subviews>
