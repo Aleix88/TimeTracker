@@ -71,9 +71,11 @@ private extension MainViewController {
         addChildViewController(currentProjectsViewController)
         currentProjectsContainer.addSubview(currentProjectsViewController.view)
         currentProjectsViewController.didMove(toParentViewController: self)
+        currentProjectsViewController.view.frame = currentProjectsContainer.bounds
         
         addChildViewController(finishedProjectsViewController)
         finishedProjectsContainer.addSubview(finishedProjectsViewController.view)
         finishedProjectsViewController.didMove(toParentViewController: self)
+        finishedProjectsViewController.view.frame = finishedProjectsContainer.bounds
     }
 }
